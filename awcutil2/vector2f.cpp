@@ -15,26 +15,31 @@ namespace awcutil
 		y = _y;
 	}
 
+	//Add
 	Vector2f Vector2f::operator+(const Vector2f & v)
 	{
 		return Vector2f(x + v.x, y + v.y);
 	}
 
+	//Subtract
 	Vector2f Vector2f::operator-(const Vector2f & v)
 	{
 		return Vector2f(x - v.x, y - v.y);
 	}
 
+	//Dot product
 	float Vector2f::operator*(const Vector2f & v)
 	{
 		return x*v.x + y*v.y;
 	}
 
+	//Scalar multiple
 	Vector2f Vector2f::operator*(float fl)
 	{
 		return Vector2f(x * fl, y * fl);
 	}
 
+	//Scalar division
 	Vector2f Vector2f::operator/(float fl)
 	{
 		return Vector2f(x / fl, y / fl);
@@ -68,7 +73,8 @@ namespace awcutil
 	{
 		return (x*x + y*y);
 	}
-
+	
+	//Return the normalized vector
 	Vector2f Vector2f::normalized()
 	{
 		float l = length();
@@ -79,6 +85,7 @@ namespace awcutil
 		return Vector2f(x, y) / l;
 	}
 
+	//Normalize the vector.
 	float Vector2f::normalize()
 	{
 		float l = length();
@@ -95,6 +102,7 @@ namespace awcutil
 		return l;
 	}
 
+	//Returns the angle of the vector in radians
 	float Vector2f::angle()
 	{
 		return atan2(y, x);

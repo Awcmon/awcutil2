@@ -2,11 +2,16 @@
 #include <iostream>
 #include <awcutil.h>
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 using std::cout;
 using awcutil::Vector2f;
 
 int main()
 {
-	cout << Vector2f(420.0f, 69.0f) * Vector2f(420,420);
+	Vector2f a(420, 420);
+	a.normalize();
+	cout << M_PI;
 	return 0;
 }

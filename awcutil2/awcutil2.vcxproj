@@ -143,6 +143,7 @@
     <ClInclude Include="vector2f.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="misc.cpp" />
     <ClCompile Include="vector2f.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
