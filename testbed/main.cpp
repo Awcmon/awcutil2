@@ -29,6 +29,16 @@ int main(int argc, char* args[])
 {
 	//cout << angr_normalize((float)M_PI);
 	awcutils::sdl::Window window("Hi", 640, 480, 0);
-	SDL_Delay(10000);
+	SDL_Event e;
+	bool run = true;
+
+	while (run)
+	{
+		while (SDL_PollEvent(&e) != 0)
+		{
+
+		}
+	}
+
 	return 0;
 }
