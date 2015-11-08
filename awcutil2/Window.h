@@ -5,7 +5,7 @@
 
 using std::string;
 
-namespace awcutils
+namespace awcutil
 {
 	namespace sdl
 	{

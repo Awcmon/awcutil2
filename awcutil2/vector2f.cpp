@@ -141,7 +141,7 @@ namespace awcutil
 		return _axis*(dot(_pos, _axis) / (_axis.x * _axis.x + _axis.y * _axis.y));
 	}
 
-	std::ostream & operator<<(std::ostream & os, const Vector2f & v)
+	std::ostream& operator<<(std::ostream & os, const Vector2f & v)
 	{
 		os << "Vector2D( " << v.x << " , " << v.y << " )";
 		return os;

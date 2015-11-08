@@ -7,6 +7,7 @@
 
 #ifdef _SDL_H
 #include "Window.h"
+#include "EventHandler.h"
 #endif
 
 #endif

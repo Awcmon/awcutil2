@@ -142,11 +142,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="awcutil.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="Keyboard.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="vector2f.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="vector2f.cpp" />
     <ClCompile Include="Window.cpp" />

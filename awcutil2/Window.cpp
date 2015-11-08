@@ -1,6 +1,6 @@
 #include "Window.h"
 
-namespace awcutils
+namespace awcutil
 {
 	namespace sdl
 	{

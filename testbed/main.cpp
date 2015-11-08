@@ -8,7 +8,9 @@
 #include <math.h>
 
 using std::cout;
+
 using awcutil::Vector2f;
+
 using awcutil::clamp;
 using awcutil::approach;
 using awcutil::deg2rad;
@@ -24,19 +26,26 @@ using awcutil::angr_difference;
 using awcutil::angr_approach;
 using awcutil::angr_forward;
 
+using awcutil::sdl::Window;
+using awcutil::sdl::EventHandler;
 
 int main(int argc, char* args[])
 {
 	//cout << angr_normalize((float)M_PI);
-	awcutils::sdl::Window window("Hi", 640, 480, 0);
+	Window window("Hi", 640, 480, 0);
 	SDL_Event e;
 	bool run = true;
+
+	EventHandler ehandler;
 
 	while (run)
 	{
 		while (SDL_PollEvent(&e) != 0)
 		{
-
+			if (e.type == SDL_QUIT)
+			{
+				run = false;
+			}
 		}
 	}
 
