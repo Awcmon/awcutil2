@@ -1,4 +1,4 @@
-SAMPLES = c++ c++11
+SAMPLES = awcutil2
 
 all:
 	@-$(foreach x,$(SAMPLES),make -C $(x);)

@@ -27,25 +27,23 @@ using awcutil::angr_approach;
 using awcutil::angr_forward;
 
 using awcutil::sdl::Window;
-using awcutil::sdl::EventHandler;
+using awcutil::sdl::EventContainer;
 
 int main(int argc, char* args[])
 {
 	//cout << angr_normalize((float)M_PI);
 	Window window("Hi", 640, 480, 0);
-	SDL_Event e;
+
 	bool run = true;
 
-	EventHandler ehandler;
+	EventContainer events;
 
 	while (run)
 	{
-		while (SDL_PollEvent(&e) != 0)
+		events.think();
+		if (events.has_event_type(SDL_QUIT))
 		{
-			if (e.type == SDL_QUIT)
-			{
-				run = false;
-			}
+			run = false;
 		}
 	}
 
