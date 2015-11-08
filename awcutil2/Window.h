@@ -15,9 +15,12 @@ namespace awcutil
 			Window();
 			Window(string _name, int _w, int _h, Uint32 _flags);
 			~Window();
+
+			SDL_Renderer* renderer;
+
 		private:
 			SDL_Window* window;
-			SDL_Renderer* renderer;
+
 			string name;
 			int w;
 			int h;

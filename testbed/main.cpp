@@ -32,7 +32,7 @@ using awcutil::sdl::EventContainer;
 int main(int argc, char* args[])
 {
 	//cout << angr_normalize((float)M_PI);
-	Window window("Hi", 640, 480, 0);
+	Window window("Hi", 640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_OPENGL);
 
 	bool run = true;
 
@@ -45,6 +45,11 @@ int main(int argc, char* args[])
 		{
 			run = false;
 		}
+
+		//SDL_SetRenderDrawColor(window.renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		SDL_RenderClear(window.renderer);
+		//Render present
+		SDL_RenderPresent(window.renderer);
 	}
 
 	return 0;
