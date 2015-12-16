@@ -100,8 +100,8 @@
     <LibraryPath>D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_13|Win32'">
-    <IncludePath>E:\ADDevZone\vs_sdl_dev_lib\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\ADDevZone\vs_sdl_dev_lib\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\ADDevZone\vs_glew-1.13.0_dev_lib\include;E:\ADDevZone\vs_sdl_dev_lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\ADDevZone\vs_glew-1.13.0_dev_lib\lib\Release\Win32;E:\ADDevZone\vs_sdl_dev_lib\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

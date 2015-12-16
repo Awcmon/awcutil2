@@ -1,7 +1,15 @@
 
 #include <iostream>
+
 #include <SDL.h>
 #undef main
+#undef M_PI
+#include <GL/glew.h>
+#include <SDL_opengl.h>
+#include <GL/GLU.h>
+
+#define _AWCUTIL_SDL
+#define _AWCUTIL_OPENGL
 #include <awcutil.h>
 
 #define _USE_MATH_DEFINES
@@ -45,11 +53,12 @@ int main(int argc, char* args[])
 		{
 			run = false;
 		}
+		
+		// Clear the screen to black
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
 
-		//SDL_SetRenderDrawColor(window.renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-		SDL_RenderClear(window.renderer);
-		//Render present
-		SDL_RenderPresent(window.renderer);
+		SDL_GL_SwapWindow(window.window);
 	}
 
 	return 0;
