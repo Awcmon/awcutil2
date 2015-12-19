@@ -6,7 +6,6 @@
 #undef M_PI
 #include <GL/glew.h>
 #include <SDL_opengl.h>
-#include <GL/GLU.h>
 
 #define _AWCUTIL_SDL
 #define _AWCUTIL_OPENGL
@@ -40,7 +39,7 @@ using awcutil::sdl::EventContainer;
 int main(int argc, char* args[])
 {
 	//cout << angr_normalize((float)M_PI);
-	Window window("Hi", 640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_OPENGL);
+	Window window("Hi", 800, 600, SDL_WINDOW_OPENGL);
 
 	bool run = true;
 
@@ -53,6 +52,7 @@ int main(int argc, char* args[])
 		{
 			run = false;
 		}
+
 		
 		// Clear the screen to black
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);

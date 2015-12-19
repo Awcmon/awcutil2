@@ -11,4 +11,10 @@
 #include "EventContainer.h"
 #endif
 
+#ifdef _AWCUTIL_OPENGL
+#define GLSL(src) "#version 150 core\n" #src
+#include "Shader.h"
+#include "Mesh.h"
+#endif
+
 #endif

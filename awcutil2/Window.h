@@ -5,7 +5,6 @@
 #ifdef _AWCUTIL_OPENGL
 #include <GL/glew.h>
 #include <SDL_opengl.h>
-#include <GL/GLU.h>
 #endif
 
 #include <string>
