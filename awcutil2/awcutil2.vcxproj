@@ -96,8 +96,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\ADDevZone-GP60\CPPLibs\glm-0.9.7.1\glm;D:\ADDevZone-GP60\VisualStudio2015Libs\vs_glew-1.13.0_dev_lib\include;D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\ADDevZone-GP60\VisualStudio2015Libs\vs_glew-1.13.0_dev_lib\lib\Release\Win32;D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_13|Win32'">
     <IncludePath>E:\ADDevZone\glm-0.9.7.1\glm;E:\ADDevZone\vs_glew-1.13.0_dev_lib\include;E:\ADDevZone\vs_sdl_dev_lib\include;$(IncludePath)</IncludePath>
