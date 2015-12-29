@@ -8,10 +8,11 @@ class Attribute
 {
 public:
 	Attribute();
-	Attribute(GLuint _location, std::string _name, int _size, GLenum _type, GLboolean _normalized, int _stride, int _offset);
+	Attribute(GLuint _program, std::string _name, int _size, GLenum _type, GLboolean _normalized, int _stride, int _offset);
 	~Attribute();
 
-	GLuint location;
+	GLuint program;
+	GLint location;
 	std::string name;
 	GLint size;
 	GLenum type;
@@ -24,8 +25,12 @@ class Mesh
 {
 public:
 	Mesh();
+	Mesh(std::vector<GLfloat> _vertices, std::vector<GLuint> _elements);
 	~Mesh();
+	void setup();
 
+	std::vector<GLfloat> vertices;
+	std::vector<GLuint> elements;
 	GLuint vao, vbo, ebo;
 	std::vector<Attribute> attributes;
 

@@ -9,6 +9,8 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+#define GLSL(src) "#version 150 core\n" #src
+
 #include <string>
 
 #include <GL/glew.h>
