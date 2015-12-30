@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "awcutil2", "awcutil2\awcutil2.vcxproj", "{B31AD016-1D5F-4C8C-A786-29AB96712740}"
 EndProject
@@ -14,6 +14,8 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_13|x64 = Debug_13|x64
 		Debug_13|x86 = Debug_13|x86
+		Debug_dt|x64 = Debug_dt|x64
+		Debug_dt|x86 = Debug_dt|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
@@ -24,6 +26,10 @@ Global
 		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug_13|x64.Build.0 = Debug_13|Win32
 		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug_13|x86.ActiveCfg = Debug_13|Win32
 		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug_13|x86.Build.0 = Debug_13|Win32
+		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug_dt|x64.ActiveCfg = Debug_dt|x64
+		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug_dt|x64.Build.0 = Debug_dt|x64
+		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug_dt|x86.ActiveCfg = Debug_dt|Win32
+		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug_dt|x86.Build.0 = Debug_dt|Win32
 		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug|x64.ActiveCfg = Debug|x64
 		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug|x64.Build.0 = Debug|x64
 		{B31AD016-1D5F-4C8C-A786-29AB96712740}.Debug|x86.ActiveCfg = Debug|Win32
@@ -37,6 +43,10 @@ Global
 		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug_13|x64.Deploy.0 = Debug_13|Win32
 		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug_13|x86.ActiveCfg = Debug_13|Win32
 		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug_13|x86.Build.0 = Debug_13|Win32
+		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug_dt|x64.ActiveCfg = Debug_dt|x64
+		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug_dt|x64.Build.0 = Debug_dt|x64
+		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug_dt|x86.ActiveCfg = Debug_dt|Win32
+		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug_dt|x86.Build.0 = Debug_dt|Win32
 		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug|x64.ActiveCfg = Debug|x64
 		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug|x64.Build.0 = Debug|x64
 		{D1CBC82A-F7BF-446C-8F9E-3273F28F18C9}.Debug|x86.ActiveCfg = Debug|Win32
