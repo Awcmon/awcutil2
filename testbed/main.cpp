@@ -36,6 +36,9 @@ using awcutil::angr_forward;
 using awcutil::sdl::Window;
 using awcutil::sdl::EventContainer;
 
+using awcutil::gl::Attribute;
+using awcutil::gl::Mesh;
+
 const GLchar* vertexSource =
 "#version 150 core\n"
 "in vec2 position;"

@@ -4,35 +4,42 @@
 #include <GL/glew.h>
 #include <string>
 
-class Attribute
+namespace awcutil
 {
-public:
-	Attribute();
-	Attribute(GLuint _program, std::string _name, int _size, GLenum _type, GLboolean _normalized, int _stride, int _offset);
-	~Attribute();
+	namespace gl
+	{
 
-	GLuint program;
-	GLint location;
-	std::string name;
-	GLint size;
-	GLenum type;
-	GLboolean normalized;
-	GLsizei stride;
-	void* offset;
-};
+		class Attribute
+		{
+		public:
+			Attribute();
+			Attribute(GLuint _program, std::string _name, int _size, GLenum _type, GLboolean _normalized, int _stride, int _offset);
+			~Attribute();
 
-class Mesh
-{
-public:
-	Mesh();
-	Mesh(std::vector<GLfloat> _vertices, std::vector<GLuint> _elements);
-	~Mesh();
-	void setup();
+			GLuint program;
+			GLint location;
+			std::string name;
+			GLint size;
+			GLenum type;
+			GLboolean normalized;
+			GLsizei stride;
+			void* offset;
+		};
 
-	std::vector<GLfloat> vertices;
-	std::vector<GLuint> elements;
-	GLuint vao, vbo, ebo;
-	std::vector<Attribute> attributes;
+		class Mesh
+		{
+		public:
+			Mesh();
+			Mesh(std::vector<GLfloat> _vertices, std::vector<GLuint> _elements);
+			~Mesh();
+			void setup();
 
-};
+			std::vector<GLfloat> vertices;
+			std::vector<GLuint> elements;
+			GLuint vao, vbo, ebo;
+			std::vector<Attribute> attributes;
 
+		};
+
+	}
+}
