@@ -12,7 +12,6 @@
 #endif
 
 #ifdef _AWCUTIL_OPENGL
-#include "Shader.h"
 #include "Mesh.h"
 #endif
 

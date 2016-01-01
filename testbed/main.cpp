@@ -73,8 +73,6 @@ int main(int argc, char* args[])
 		0, 1, 2,
 		1, 2, 3
 	};
-	
-	//Shader testshader(vertexSource, fragmentSource);
 
 	// Create and compile the vertex shader
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
