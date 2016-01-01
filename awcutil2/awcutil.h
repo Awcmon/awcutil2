@@ -11,4 +11,8 @@
 #include "EventContainer.h"
 #endif
 
+#ifdef _AWCUTIL_OPENGL
+#include "Mesh.h"
+#endif
+
 #endif

@@ -9,6 +9,14 @@
       <Configuration>Debug_13</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_dt|Win32">
+      <Configuration>Debug_dt</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_dt|x64">
+      <Configuration>Debug_dt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -45,6 +53,12 @@
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_dt|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -59,6 +73,12 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_13|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_dt|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
@@ -82,6 +102,9 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_13|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_dt|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -91,16 +114,23 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_13|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_dt|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\ADDevZone-GP60\CPPLibs\glm-0.9.7.1\glm;D:\ADDevZone-GP60\VisualStudio2015Libs\vs_glew-1.13.0_dev_lib\include;D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\ADDevZone-GP60\VisualStudio2015Libs\vs_glew-1.13.0_dev_lib\lib\Release\Win32;D:\ADDevZone-GP60\VisualStudio2015Libs\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_13|Win32'">
-    <IncludePath>E:\ADDevZone\vs_glew-1.13.0_dev_lib\include;E:\ADDevZone\vs_sdl_dev_lib\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\ADDevZone\glm-0.9.7.1\glm;E:\ADDevZone\vs_glew-1.13.0_dev_lib\include;E:\ADDevZone\vs_sdl_dev_lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\ADDevZone\vs_glew-1.13.0_dev_lib\lib\Release\Win32;E:\ADDevZone\vs_sdl_dev_lib\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_dt|Win32'">
+    <IncludePath>E:\ADDevZone\glm-0.9.7.1\glm;E:\ADDevZone\vs_glew-1.13.0_dev_lib\include;E:\ADDevZone\vs_sdl_dev_lib\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\ADDevZone\vs_glew-1.13.0_dev_lib\lib\Release\Win32;E:\ADDevZone\vs_sdl_dev_lib\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -131,6 +161,20 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_dt|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>
@@ -146,6 +190,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_13|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_dt|x64'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -204,6 +262,7 @@
     <ClInclude Include="EventContainer.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="vector2f.h" />
     <ClInclude Include="Window.h" />
@@ -212,6 +271,7 @@
     <ClCompile Include="EventContainer.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="vector2f.cpp" />
     <ClCompile Include="Window.cpp" />
