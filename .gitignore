@@ -9,6 +9,8 @@
 
 # Build results
 [Dd]ebug/
+[Dd]ebug_dt/
+[Dd]ebug_13/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
