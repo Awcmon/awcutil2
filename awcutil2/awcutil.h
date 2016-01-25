@@ -13,7 +13,6 @@
 
 #ifdef _AWCUTIL_OPENGL
 #include "Mesh.h"
-#include "Shader.h"
 #endif
 
 #endif
