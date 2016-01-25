@@ -45,7 +45,7 @@ const GLchar* vertexSource =
 "void main() {"
 "   gl_Position = vec4(position, 0.0, 1.0);"
 "}";
-const GLchar* fragmentSource = "#version 150\n uniform vec3 triangleColor; out vec4 outColor; void main() { outColor = vec4(0.5, 0.5, 0.5, 1.0); } ";
+const GLchar* fragmentSource = "#version 150\n uniform vec3 triangleColor; out vec4 outColor; void main() { outColor = vec4(0.5, 0.5, 1.0, 1.0); } ";
 
 int main(int argc, char* args[])
 {
@@ -73,7 +73,7 @@ int main(int argc, char* args[])
 		0, 1, 2,
 		1, 2, 3
 	};
-
+	/*
 	// Create and compile the vertex shader
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, &vertexSource, NULL);
@@ -91,17 +91,21 @@ int main(int argc, char* args[])
 	glBindFragDataLocation(shaderProgram, 0, "outColor");
 	glLinkProgram(shaderProgram);
 	glUseProgram(shaderProgram);
+	*/
+
+	Shader shaderProgram(vertexSource, fragmentSource);
+	shaderProgram.use();
 
 	// Get the location of the color uniform
-	GLint uniColor = glGetUniformLocation(shaderProgram, "triangleColor");
+	GLint uniColor = glGetUniformLocation(shaderProgram.id, "triangleColor");
 
 	//Meshes
 	Mesh testmesh(vertices, elements);
-	testmesh.attributes.push_back(Attribute(shaderProgram, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
+	testmesh.attributes.push_back(Attribute(shaderProgram.id, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
 	testmesh.setup();
 
 	Mesh testmesh2(vertices2, elements);
-	testmesh2.attributes.push_back(Attribute(shaderProgram, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
+	testmesh2.attributes.push_back(Attribute(shaderProgram.id, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
 	testmesh2.setup();
 
 	while (run)
