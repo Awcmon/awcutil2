@@ -56,6 +56,7 @@ namespace awcutil
 
 		void Mesh::setup()
 		{
+
 			glGenVertexArrays(1, &vao);
 			glBindVertexArray(vao);
 

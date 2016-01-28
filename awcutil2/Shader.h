@@ -16,6 +16,7 @@ namespace awcutil
 		class Shader
 		{
 		public:
+			Shader() {};
 			Shader(const GLchar* vertexSource, const GLchar* fragmentSource, const GLchar* geometrySource = nullptr);
 			~Shader();
 			Shader &use();

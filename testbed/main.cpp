@@ -46,7 +46,15 @@ const GLchar* vertexSource =
 "void main() {"
 "   gl_Position = vec4(position, 0.0, 1.0);"
 "}";
-const GLchar* fragmentSource = "#version 150\n uniform vec3 triangleColor; out vec4 outColor; void main() { outColor = vec4(0.5, 0.5, 1.0, 1.0); } ";
+//const GLchar* fragmentSource = "#version 150\n uniform vec3 triangleColor; out vec4 outColor; void main() { outColor = vec4(0.5, 0.5, 1.0, 1.0); } ";
+const GLchar* fragmentSource = GLSL(
+	uniform vec3 color;
+	out vec4 outColor;
+	void main() 
+	{
+		outColor = vec4(0.5, 0.5, 1.0, 1.0);
+	}
+);
 
 void generateCircle(vector<GLfloat> &vbo, vector<GLuint> &ebo, GLfloat radius, GLint points)
 {
@@ -78,6 +86,8 @@ int main(int argc, char* args[])
 	Window window("Hi", 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_BORDERLESS);
 	bool run = true;
 	EventContainer events;
+
+	Render render;
 
 	
 	vector<GLfloat> vertices = {
@@ -125,8 +135,10 @@ int main(int argc, char* args[])
 
 		//glBindVertexArray(testmesh.vao);
 		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		glBindVertexArray(testmesh2.vao);
-		glDrawElements(GL_TRIANGLES, elements2.size(), GL_UNSIGNED_INT, 0);
+		//glBindVertexArray(testmesh2.vao);
+		//glDrawElements(GL_TRIANGLES, elements2.size(), GL_UNSIGNED_INT, 0);
+		glBindVertexArray(render.meshes["quad"].vao);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		SDL_GL_SwapWindow(window.window);
 	}
