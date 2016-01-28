@@ -38,6 +38,7 @@ using awcutil::sdl::EventContainer;
 
 using awcutil::gl::Attribute;
 using awcutil::gl::Mesh;
+using awcutil::gl::Shader;
 
 const GLchar* vertexSource =
 "#version 150 core\n"
@@ -47,10 +48,34 @@ const GLchar* vertexSource =
 "}";
 const GLchar* fragmentSource = "#version 150\n uniform vec3 triangleColor; out vec4 outColor; void main() { outColor = vec4(0.5, 0.5, 1.0, 1.0); } ";
 
+void generateCircle(vector<GLfloat> &vbo, vector<GLuint> &ebo, GLfloat radius, GLint points)
+{
+	//Generate vertices
+	vbo.push_back(0.0f);
+	vbo.push_back(0.0f);
+	for (int i = 0; i < points; i++)
+	{
+		float ang = (float)(((2.0*((double)M_PI)) / ((double)points))*((double)i));
+		vbo.push_back((GLfloat)cos(ang)*radius);
+		vbo.push_back((GLfloat)sin(ang)*radius);
+	}
+
+	//Generate elements
+	for (int i = 1; i < points; i++)
+	{
+		ebo.push_back(0);
+		ebo.push_back(i);
+		ebo.push_back(i + 1);
+	}
+	ebo.push_back(0);
+	ebo.push_back(points);
+	ebo.push_back(1);
+}
+
 int main(int argc, char* args[])
 {
 	//cout << angr_normalize((float)M_PI);
-	Window window("Hi", 800, 600, SDL_WINDOW_OPENGL);
+	Window window("Hi", 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_BORDERLESS);
 	bool run = true;
 	EventContainer events;
 
@@ -62,17 +87,14 @@ int main(int argc, char* args[])
 		0.5f, -0.5f
 	};
 
-	vector<GLfloat> vertices2 = {
-		0.9f, 0.9f,
-		0.9f, 0.95f,
-		0.95f, 0.9f,
-		0.95f, 0.95f
-	};
-
 	vector<GLuint> elements = {
 		0, 1, 2,
 		1, 2, 3
 	};
+
+	vector<GLfloat> vertices2;
+	vector<GLuint> elements2;
+	generateCircle(vertices2, elements2, 1.0f, 200);
 
 	Shader shaderProgram(vertexSource, fragmentSource);
 	shaderProgram.use();
@@ -85,7 +107,7 @@ int main(int argc, char* args[])
 	testmesh.attributes.push_back(Attribute(shaderProgram.id, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
 	testmesh.setup();
 
-	Mesh testmesh2(vertices2, elements);
+	Mesh testmesh2(vertices2, elements2);
 	testmesh2.attributes.push_back(Attribute(shaderProgram.id, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
 	testmesh2.setup();
 
@@ -101,10 +123,10 @@ int main(int argc, char* args[])
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glBindVertexArray(testmesh.vao);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		//glBindVertexArray(testmesh.vao);
+		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(testmesh2.vao);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, elements2.size(), GL_UNSIGNED_INT, 0);
 
 		SDL_GL_SwapWindow(window.window);
 	}
