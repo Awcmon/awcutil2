@@ -8,13 +8,21 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-class Shader
+namespace awcutil
 {
-public:
-	Shader(const GLchar* vertexSource, const GLchar* fragmentSource, const GLchar* geometrySource = nullptr);
-	~Shader();
-	Shader &use();
+	namespace gl
+	{
 
-	GLuint id;
+		class Shader
+		{
+		public:
+			Shader(const GLchar* vertexSource, const GLchar* fragmentSource, const GLchar* geometrySource = nullptr);
+			~Shader();
+			Shader &use();
 
-};
+			GLuint id;
+
+		};
+
+	}
+}
