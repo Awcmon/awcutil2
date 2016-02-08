@@ -101,7 +101,7 @@ int main(int argc, char* args[])
 		0, 1, 2,
 		1, 2, 3
 	};
-
+	/*
 	vector<GLfloat> vertices2;
 	vector<GLuint> elements2;
 	generateCircle(vertices2, elements2, 1.0f, 200);
@@ -120,6 +120,12 @@ int main(int argc, char* args[])
 	Mesh testmesh2(vertices2, elements2);
 	testmesh2.attributes.push_back(Attribute(shaderProgram.id, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
 	testmesh2.setup();
+	*/
+
+	render.meshes["quad"] =  Mesh(vertices, elements);
+	render.meshes["quad"].attributes.push_back(Attribute(render.shaders["colorShader"].id, "position", 2, GL_FLOAT, GL_FALSE, 0, 0));
+	render.meshes["quad"].setup();
+	render.shaders["colorShader"].use();
 
 	while (run)
 	{
