@@ -4,8 +4,22 @@ namespace awcutil
 {
 	namespace gl
 	{
+		Shader::Shader()
+		{
+
+		}
 
 		Shader::Shader(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource)
+		{
+			compile(vertexSource, fragmentSource, geometrySource);
+		}
+
+		Shader::~Shader()
+		{
+			glDeleteProgram(id);
+		}
+
+		void Shader::compile(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar * geometrySource)
 		{
 			GLuint vertexShader, fragmentShader, geometryShader;
 
@@ -44,11 +58,6 @@ namespace awcutil
 			{
 				glDeleteShader(geometryShader);
 			}
-		}
-
-		Shader::~Shader()
-		{
-			glDeleteProgram(id);
 		}
 
 		Shader & Shader::use()

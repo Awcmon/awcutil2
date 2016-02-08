@@ -16,9 +16,10 @@ namespace awcutil
 		class Shader
 		{
 		public:
-			Shader() {};
+			Shader();
 			Shader(const GLchar* vertexSource, const GLchar* fragmentSource, const GLchar* geometrySource = nullptr);
 			~Shader();
+			void compile(const GLchar * vertexSource, const GLchar * fragmentSource, const GLchar* geometrySource = nullptr);
 			Shader &use();
 
 			void    setFloat(const GLchar *name, GLfloat value, GLboolean useShader = false);
