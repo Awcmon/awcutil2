@@ -82,7 +82,7 @@ namespace awcutil
 
 	float angd_normalize(float ang)
 	{
-		return (float)(fmod((ang + 180), 360) - 180);
+		return (float)(fmod((ang + 180.0f), 360.0f) - 180.0f);
 	}
 	float angd_difference(float a, float b)
 	{
